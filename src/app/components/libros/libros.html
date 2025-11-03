@@ -1,0 +1,33 @@
+<h2>Gestión de Libros</h2>
+
+<form (submit)="libroSeleccionado.id ? actualizar() : agregar(); $event.preventDefault()">
+  <input [(ngModel)]="libroSeleccionado.title" name="title" placeholder="Título" required>
+  <input [(ngModel)]="libroSeleccionado.author" name="author" placeholder="Autor" required>
+
+  <button type="submit">{{ libroSeleccionado.id ? 'Actualizar' : 'Agregar' }}</button>
+  <button type="button" (click)="limpiarFormulario()">Limpiar</button>
+</form>
+
+<hr>
+
+<table border="1" cellpadding="5" cellspacing="0">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Título</th>
+      <th>Autor</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let lib of libros">
+      <td>{{ lib.id }}</td>
+      <td>{{ lib.title }}</td>
+      <td>{{ lib.author }}</td>
+      <td>
+        <button (click)="editar(lib)">Editar</button>
+        <button (click)="eliminar(lib.id)">Eliminar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
