@@ -1,13 +1,10 @@
-<!-- app.component.html -->
+
 <header>
-  <h1>📚 Biblioteca Angular</h1>
+  <h1> Libreria Milo</h1>
 </header>
 
 <main class="container">
-  <!-- Muestra el componente de libros -->
   <app-libros></app-libros>
-
-  <!-- Aquí se renderizan las rutas -->
   <router-outlet></router-outlet>
 </main>
 
@@ -16,22 +13,98 @@
 </footer>
 
 <style>
+  :host {
+    font-family: 'Roboto', sans-serif;
+    background-color: #fff0f5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   header {
-    background-color: #673ab7;
+    background-color: deeppink;
     color: white;
     text-align: center;
-    padding: 1rem;
+    padding: 1rem 2rem;
     border-radius: 0 0 10px 10px;
+    width: 100%;
+  }
+
+  header h1 {
+    font-weight: 700;
+    font-size: 2rem;
+    margin: 0;
   }
 
   .container {
     padding: 2rem;
+    background-color: #fff0f5;
+    border-radius: 10px;
+    margin: 2rem 0;
+    max-width: 900px;
+    width: 90%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   footer {
     text-align: center;
-    margin-top: 3rem;
-    color: gray;
+    margin-top: 2rem;
+    color: deeppink;
     font-size: 0.9rem;
+  }
+
+ 
+  .editar {
+    background-color: mediumorchid; /* morado */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 12px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-right: 5px;
+  }
+
+  .editar:hover {
+    background-color: orchid; 
+  }
+
+  .eliminar {
+    background-color: tomato; 
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 12px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+
+  .eliminar:hover {
+    background-color: crimson;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  table th, table td {
+    padding: 12px 15px;
+    border: 1px solid #eee;
+  }
+
+  table thead {
+    background-color: deeppink;
+    color: white;
+  }
+
+  table tbody tr:hover {
+    background-color: #ffe4f1; 
   }
 </style>
